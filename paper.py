@@ -232,7 +232,7 @@ class ArxivPaper:
             # use gpt-4o tokenizer for estimation
             enc = tiktoken.encoding_for_model("gpt-4o")
             prompt_tokens = enc.encode(prompt)
-            prompt_tokens = prompt_tokens[:4000]  # truncate to 4000 tokens
+            prompt_tokens = prompt_tokens[:3500]  # truncate to 3500 tokens
             prompt = enc.decode(prompt_tokens)
             llm = get_llm()
             affiliations = llm.generate(
